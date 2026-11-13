@@ -12,100 +12,111 @@ _Read by every role skill. Top section is yours; everything below the line is re
 <!-- OWNER:END -->
 
 ---
-## Auto facts (synced 2026-11-01)
+## Auto facts (synced 2026-11-08)
 ### What it is / offer
-- Specialist recruiting for aerospace, defense, industrial and construction employers. Places contract engineers, technicians and safety staff (1099 or W-2) and runs confidential direct-hire searches. Headquartered on Florida's Space Coast, recruiting nationwide [acuere/src/lib/site-facts.ts; acuere/CLAUDE.md 2026-10-15; https://acueretalent.com/]
+- Specialist recruiting for aerospace, defense, industrial and construction employers. Places contract engineers, technicians and safety staff (1099 or W-2) and runs confidential direct-hire searches. HQ on Florida's Space Coast, recruiting nationwide [acuere/src/lib/site-facts.ts; acuere/CLAUDE.md; https://acueretalent.com/]
 - Services: contract and contract-to-hire; direct-hire search ("a few searches at a time"); executive/leadership search; confidential replacement searches; relocation help [acuere/CLAUDE.md; https://acueretalent.com/]
-- Live headline (unchanged): "Specialist recruiting for the people who build, test and launch." Homepage mentions per diem and "One invoice a week" for contract work, with no amounts [https://acueretalent.com/, 2026-11-01]
-- Entity: README says "Acuere, LLC (pending amendment to Acuere Talent, LLC)" [acuere/README.md]. No Acuere entity on Sunbiz ("planned") [idoneity-cms/docs/COMPLIANCE_CALENDAR.md]. Live footer: "© 2026 Acuere Talent, LLC. All rights reserved." [https://acueretalent.com/, 2026-11-01]
+- Live site 2026-11-08: homepage returns 200; headline and copy unchanged since last week [https://acueretalent.com/]
+- Entity:
+  - README: "Acuere, LLC (pending amendment to Acuere Talent, LLC)" [acuere/README.md]
+  - Sunbiz: no Acuere entity ("planned") [idoneity-cms/docs/COMPLIANCE_CALENDAR.md]
+  - Live footer still reads "Acuere Talent, LLC" [https://acueretalent.com/, 2026-11-08]
 
 ### Customers & market
-- No placements recorded: 0 perm, 0 contract, $0 booked, $0 AR, 1 application. The file's mtime is 2026-10-24, but its contents are still `generated_at` 2026-07-17 [acuere/data/analytics/latest.json]
-- Last documented pool: 1 candidate; 416 drafted emails waiting on the email provider (as of 2026-10-17) [acuere/docs/NEXT_STEPS.md]
-- Pitch re-screen (2026-10-17) cut the queue from 677 to 31 and estimated fees from $37.3M to $1.13M [acuere/CLAUDE.md]
-- Live /jobs: 51 roles, all "Confidential client", no pay shown. 14 are clearly off-lane: CFO, revenue marketing, 3 automotive service tech roles, 2 CRNA roles, clinical ops, neurology account director, ambulatory business manager, digital-audio content, CRE investment analytics, and 2 tax roles [https://acueretalent.com/jobs, 2026-11-01]
-- Target lanes: aerospace/defense/industrial/construction only; healthcare, finance, education, marketing, sales and software are never pitched [acuere/src/lib/sourcing/lanes.ts via CLAUDE.md]
+- No placements recorded. Desk run of 2026-11-08 [acuere/data/desk-status.json]:
+  - 0 active contracts, 0 placements, 0 fees received, 0 referrals earned
+  - 1 candidate in the pool
+- Sourcing volume (2026-11-08) [acuere/data/desk-status.json]:
+  - 16,717 live sourced postings; 1,471 new in the last 3 days
+  - 63 matches total; today's match run saved 25 matches (8 strong) for the 1 candidate
+- Market research (14-day window): 7,453 postings, 6,662 fee-worthy, 19 on the Space Coast. Daily target CSVs written 11-02 → 11-08 [desk-status.json; data/research/targets-2026-11-0*.csv]
+- Pitch re-screen (11-08): 39 queued pitches scanned, all 39 in lane; estimated fees $1,468,311. On 10-17 it was 31 kept / $1.13M [desk-status.json; acuere/CLAUDE.md]
+- Live /jobs: 51 roles (51 jobs pushed by site-sync 11-08). Last week, 14 of the 51 were counted as off-lane; not re-counted this week [desk-status.json; runs/2026-11-01/acuere.auto.md]
+- Target lanes: aerospace, defense, industrial, construction only; healthcare, finance, education, marketing, sales and software are never pitched [acuere/src/lib/sourcing/lanes.ts via CLAUDE.md]
 
 ### Pricing (as published)
-- Website: no fees, rates or pay ("Don't show pricing. Ever."). Re-verified 2026-11-01: none on the home page or /jobs. Candidates are never charged [acuere/CLAUDE.md; https://acueretalent.com/]
-- Employer emails and referral intros carry one terms line: direct hire 19.5% of first-year base salary, 90-day replacement guarantee; contract billed hourly at a per-role rate [acuere/CLAUDE.md; src/lib/automation/email-templates.ts]
-- DB column default is still 2000 bps (20%); code always passes 19.5% [acuere/CLAUDE.md]
+- Website: no fees, rates or pay ("Don't show pricing. Ever."). Candidates are never charged [acuere/CLAUDE.md; https://acueretalent.com/]
+- Employer emails and referral intros carry one terms line: direct hire at 19.5% of first-year base salary with a 90-day replacement guarantee; contract work billed hourly at a per-role rate [acuere/CLAUDE.md; src/lib/automation/email-templates.ts]
+- The DB column default is still 2000 bps (20%); the code always passes 19.5% [acuere/CLAUDE.md]
 - Trades tier: 12% fee in estimates [acuere/CLAUDE.md; src/lib/sourcing/fee-tier.ts]
-- Internal defaults (not published): 17% expense markup; 4% veteran-owned-client discount; net-7 invoices; 14% W-2 burden; contract pitch floor $28/hr; direct-hire pitch floor $15k estimated fee [acuere/CLAUDE.md]
+- Internal defaults, not published [acuere/CLAUDE.md]:
+  - 17% expense markup; 4% discount for veteran-owned clients; 14% W-2 burden
+  - Net-7 invoices
+  - Pitch floors: $28/hr for contract roles; $15k estimated fee for direct hire
 - Client invoices go out weekly on Thursday (New York time) [acuere/src/lib/contractors/billing.ts]
-- Referral bonuses in code, not shown on the site: $500 per placed candidate (after 90 days); $1,000 per new client (after first paid invoice) [acuere/CLAUDE.md]
+- Referral bonuses are in code, not on the site: $500 per placed candidate (after 90 days); $1,000 per new client (after first paid invoice) [acuere/CLAUDE.md]
 
 ### Product / tech status
 - Stack: Next.js 16, React 19, Tailwind 4, Drizzle; OpenNext on Cloudflare; D1 `acuere-db`, R2, Workers AI (free allowance only) [acuere/CLAUDE.md; package.json]
-- Live health 2026-11-01:
-  - `ok: true`, db `d1-binding` ok, latest migration `0029_spec_consent.sql`
-  - `site.dbAvailable: false`, so public forms and the portal still use the R2 relay (LIVE_DB not on)
-  - email provider `stub`, `live: false`: nothing sends
-  [https://acueretalent.com/api/health]
-- Workers: `acuere` (site), `acuere-inbound` (email), `acuere-watchdog` (*/30), `acuere-cron` [acuere/CLAUDE.md]
-- `acuere-cron`:
-  - Crons: */15, hourly, daily 12:00, Mon 13:00, Mon/Wed/Fri 14:00
-  - `CLOUD_JOBS` (12): contractor-billing, fee-protection, referrals, interview-scheduler, intake-backlog, sql-match, semantic-match, match-candidates, pitch-drafts, desk-hygiene, sourcing-all, crawl-targets
-  - `acuere-nurture` Workflow bound
-  - Auto-deploys when workers/cron changes on main
-  [acuere/workers/cron/wrangler.json (mtime 2026-10-25); gitlog-acuere.txt]
-- No commits since the 2026-10-25 sync. The 3 commits in this week's log (dated 10-25) were already captured last week [runs/2026-11-01/gitlog-acuere.txt]
-- Candidate portal (/portal/me/<token>), client/contractor portals, cloud-only intake, spec-pitch consent, Browser Run careers crawl: unchanged since last week [acuere/CLAUDE.md; gitlog 2026-10-19]
-- Deploy gate: scenario backtest (101+ scenarios) [acuere/CLAUDE.md]
-- Still blocked (last documented 10-17; email still stub live):
-  - No email-provider key
+- Live health 2026-11-08 ~22:00 UTC [https://acueretalent.com/api/health]:
+  - `ok: true` on D1 (`d1-binding`); latest migration `0029_spec_consent.sql`
+  - `site.dbAvailable: false`: forms and portal still use the R2 relay
+  - Email provider `stub` (live: false); autonomyMode `manual`
+  - **36 pending approvals**
+  - AI model `@cf/google/gemma-4-26b-a4b-it`; 0 AI calls in 24h
+- Desk run 2026-11-08: 1 of ~22 steps failed. **"BD pitch drafts" fails on a `sourced_postings` query**, and the desk warns "1471 new postings in 3 days but 0 pitches drafted — pitch step may be stalled" [acuere/data/desk-status.json; desk-issues.txt]
+- CTO brief (11-08) [desk-status.json]:
+  - Tests: FAILING, last run ~11-02
+  - End-to-end scenario backtest FAILING: 98/101 passed, last run ~11-02. This is the deploy gate
+  - Backup drive not reachable; the D1 dump still went offsite to R2. D1 dumps were written locally on 11-07 and 11-08 [data/backups/]
+- IndexNow pings return HTTP 403 for 8 URLs [desk-status.json site-sync]
+- Workers [acuere/CLAUDE.md]:
+  - `acuere` (site), `acuere-inbound` (email), `acuere-watchdog` (*/30), `acuere-cron`
+  - The watchdog's local `wrangler.json` was modified this week [file mtime]
+- No git commits this week [gitlog-acuere.txt]
+- Still blocked [desk-issues.txt; setup-services log; /api/health]:
+  - No email-provider key (setup-services reports `resend=false` every day through 11-08)
   - No mailing/remit-to address
-  - Cloudflare token lacks Bot Management
-  - No LinkedIn page/app
+  - No LinkedIn app (LINKEDIN_CLIENT_ID/SECRET unset)
   - LIVE_DB=1 not set
-  [acuere/docs/NEXT_STEPS.md; CLAUDE.md; live /api/health]
 
 ### Sales & marketing activity
-- COLD_OUTREACH last documented **off** (2026-10-16, "no emailing right now, I don't have an address"). Live email provider is a stub, so nothing can send regardless [acuere/CLAUDE.md; https://acueretalent.com/api/health]
-- Desk aliases (pen names, no invented bios):
-  - Claudia (Talent Acquisition)
-  - Vivian (Business Development)
-  - Rebecca (Recruiting)
-  - Genevieve (Contractor Services)
-  - Eleanor (Executive Search)
-  - Margaret (Accounting)
-  - Nora (Billing)
-  [acuere/CLAUDE.md]
-- SEO: sitemap, AI-crawler robots, JSON-LD, llms.txt, local job pages (Melbourne, Titusville, Cape Canaveral, Space Coast, clearance), IndexNow [acuere/CLAUDE.md]
+- COLD_OUTREACH last documented **off** (2026-10-16). Nothing can send anyway: 40 approved emails held in the send queue for "no email provider configured" [acuere/CLAUDE.md; desk-status.json]
+- Review queue: 34 drafts waiting for approval in /admin/review; 35 approved emails overdue to send [desk-status.json desk-hygiene]
+- Spec jobs: 50 open, 0 published this run (capacity 0) [desk-status.json]
+- LinkedIn agent not connected [desk-status.json]
+- Desk aliases (pen names, no invented bios) [acuere/CLAUDE.md]:
+  - Claudia (Talent Acquisition), Vivian (Business Development), Rebecca (Recruiting)
+  - Genevieve (Contractor Services), Eleanor (Executive Search)
+  - Margaret (Accounting), Nora (Billing)
+- SEO: sitemap, AI-crawler robots, JSON-LD, llms.txt, local job pages (Melbourne, Titusville, Cape Canaveral, Space Coast, clearance), IndexNow (currently 403 on 8 URLs) [acuere/CLAUDE.md; desk-status.json]
 - Planned ads: free listings → Google/LinkedIn/Meta (~$45/day) → ChatGPT ads in month 2 [acuere/docs/NEXT_STEPS.md]
-- Praesidium sister-brands footer still absent from the live site [https://acueretalent.com/, 2026-11-01]
 
 ### Competitors
 - Excluded from pitching as competitors: Robert Half, Kforce, Aerotek, Adecco, Randstad, Manpower, Kelly, Insight Global, TEKsystems, CyberCoders, Motion Recruitment, Apex Systems, Actalent, Allegis, Hays, Michael Page, Korn Ferry, Heidrick, Spencer Stuart, Jobot [acuere/src/lib/sourcing/enrich.ts]
 - Site design modeled on Robert Half and Shirley Parsons [acuere/CLAUDE.md]
 
 ### Key tools & systems
-- Cloudflare: Workers, D1, R2, Workers AI, Email Routing, WAF (USA-only), Turnstile, Workflows, Browser Rendering (Browser Run) [acuere/CLAUDE.md; workers/cron/wrangler.json]
-- Data/sourcing: Adzuna, The Muse, JSearch, Apollo, Hunter, Firecrawl, Wikidata. Resend, Cal.com and Stripe are built but off until keys exist [acuere/docs/DATA_FEEDS_SETUP.md]
-- Mac desk runner (launchd) for Mac-only steps; nightly offsite D1 backups to R2 `praesidium-db-backups`, plus a weekly local copy [acuere/CLAUDE.md]
+- Cloudflare: Workers, D1, R2, Workers AI (Gemma 4 / Llama 3.1 8B / bge-m3 embeddings; 9,500-neuron daily cap), Email Routing, WAF (USA-only), Turnstile, Workflows, Browser Rendering [acuere/CLAUDE.md; /api/health]
+- Data and sourcing: Adzuna, The Muse, JSearch, Apollo, Hunter, Firecrawl, Wikidata. Resend, Cal.com and Stripe are built but stay off until keys exist [acuere/docs/DATA_FEEDS_SETUP.md]
+- Mac desk runner (launchd) ran daily and the quick pass ran every 30 min this week. Nightly offsite D1 backups go to R2 `praesidium-db-backups` [acuere/CLAUDE.md; data/desk-daily.log; data/backups/]
 - No GitHub for Acuere (decision 2026-10-17) [acuere/CLAUDE.md]
-- Owner finance lives in Idoneity admin under `ent_acuere` [acuere/docs/OWNER_CONSOLE.md]
+- Owner finance in Idoneity admin under `ent_acuere` [acuere/docs/OWNER_CONSOLE.md]
 
 ### Regulatory / compliance notes
 - Florida: minimum wage $15.00/hr from 2026-09-30; no state employment-agency license; E-Verify for 25+ staff; CHOICE Act noncompetes up to 4 years [acuere/docs/compliance/florida-ledger.md]
-- Florida new-hire reporting also covers independent contractors paid $600+ in a calendar year (reported to FL Dept. of Revenue; in effect since 2021). Not found in the repo's compliance ledger [https://www.constangy.com/newsroom/newsletters/Florida-expands-requirement-for-reporting-new-hires-independent-contractors-to-Department-of-Revenue; https://www.hinshawlaw.com/en/insights/blogs/employment-law-observer/florida-boosts-minimum-wage-rate-mandates-reporting-requirements-for-businesses-using-independent-contractors]
-- Federal: DOL proposed (2026-02-26) a return to the five-factor "economic reality" independent-contractor test. Its regulatory agenda targets a final rule in October 2026; no source found confirming it is final. This matters for the 1099-first default [https://www.jdsupra.com/legalnews/deja-vu-for-employers-dol-moves-to-4368674/; https://jjkellercompliancenetwork.com/news/wage-and-hour-division-publishes-its-2026-regulatory-agenda]
-- TCPA: FCC revoke-all rule starts 2027-01-31. FL FTSA: calls 8am–8pm, max 3 per 24h; no autodialer/AI voice to cell phones; no cold texts [acuere/docs/compliance/florida-ledger.md; docs/COLD_CALLING.md]
-- CAN-SPAM: postal address required plus one-click unsubscribe; no sends to Canada/EU/UK; warm-up caps 15/30/50 per day, then 80 [acuere/CLAUDE.md]
+- Florida new-hire reporting also covers independent contractors paid $600+ in a calendar year (reported to the FL Dept. of Revenue). The repo ledger doesn't mention it [https://www.constangy.com/newsroom/newsletters/Florida-expands-requirement-for-reporting-new-hires-independent-contractors-to-Department-of-Revenue]
+- Federal independent-contractor rule: DOL proposed (2026-02-26) rescinding the 2024 rule in favor of a modified 2021 "economic reality" framework. Comments closed 2026-04-28. **No final rule confirmed as of 2026-11-08** [https://www.jdsupra.com/legalnews/dol-publishes-proposed-rule-to-rescind-1320616/; WebSearch 2026-11-08]
+- TCPA: the FCC revoke-all rule starts 2027-01-31. FL FTSA: calls 8am–8pm, max 3 per 24h; no autodialer or AI voice to cell phones; no cold texts [acuere/docs/compliance/florida-ledger.md; docs/COLD_CALLING.md]
+- CAN-SPAM: a postal address and one-click unsubscribe are required; no sends to Canada/EU/UK; warm-up caps 15/30/50 per day, then 80 [acuere/CLAUDE.md]
 - 1099/W-9: payouts held until a W-9 is on file; 1099-NEC threshold $2,000 from 2026; CA forced to W-2; 30% tax reserve [acuere/CLAUDE.md]
 - EEO footer; pay-range rules by state; ITAR/clearance screening only when the posting requires it; client referrers certify they have no hiring role [acuere/CLAUDE.md]
 - Before the first placement: attorney, CPA, GL + E&O insurance, payroll/EOR partner [acuere/docs/NEXT_STEPS.md]
 
 ## Changed this week
-- No new commits since the 2026-10-25 sync. The 3 commits in this week's log (dated 10-25: acuere-cron auto-deploy, cloud desk on Cloudflare, an autosave) were already captured last week [gitlog-acuere.txt]
-- Live health now reports clearly: `ok: true` on D1 (`d1-binding`), latest migration 0029_spec_consent. It also confirms email provider = `stub` (live: false) and `site.dbAvailable: false`, so forms and the portal are still on the R2 relay [https://acueretalent.com/api/health]
-- Off-lane roles on /jobs counted more fully: 14 of 51 (healthcare, automotive, finance/tax, marketing, media, CRE). The total is still 51 [https://acueretalent.com/jobs]
-- Regulatory notes added: FL independent-contractor new-hire reporting ($600+, to DOR), which the repo ledger doesn't mention; and the DOL independent-contractor final rule, targeted for October 2026 but with no source confirming it is final [constangy.com; jdsupra.com]
-- Unchanged live: headline, no pricing, "© 2026 Acuere Talent, LLC" footer, no sister-brand footer [https://acueretalent.com/]
+- NEW: "BD pitch drafts" fails on a `sourced_postings` query; 0 pitches drafted from 1,471 new postings in 3 days [acuere/data/desk-status.json; desk-issues.txt]
+- NEW: the deploy-gate scenario backtest is FAILING (98/101) and tests are failing, both last run ~11-02, so auto-deploys are gated [desk-status.json CTO brief]
+- Queue now visible: 36 pending approvals live, 34 drafts awaiting review, 40 approved emails held for "no email provider" [/api/health; desk-status.json]
+- Pitch re-screen: 39 queued pitches, all in lane, estimated fees $1.47M (10-17: 31 / $1.13M) [desk-status.json]
+- Pool still 1 candidate; 16,717 live postings sourced; daily target and rescreen CSVs written 11-02 → 11-08 [desk-status.json; data/research/]
+- IndexNow returns 403 for 8 URLs; external backup drive unplugged (R2 offsite backup still ran) [desk-status.json]
+- Live AI model shown as Gemma 4 26B on Workers AI [/api/health]
+- Regulatory: no final DOL independent-contractor rule found as of 11-08 (its target was October 2026) [WebSearch]
+- Unchanged: no git commits; email provider stub; footer "Acuere Talent, LLC"; no pricing on site
 
 ## Open questions for Tyler
-- The live site still shows email provider = stub, so nothing has been able to send since 10-17. When will the email-provider key and mailing address be set, and when do you want COLD_OUTREACH back on?
-- 14 of the 51 roles on /jobs are off-lane (CRNA, automotive techs, tax, CFO, marketing), two weeks after the lane re-screen. Should they come off the public board?
+- 40 approved emails and 34 drafts are piling up, and nothing can send without an email-provider key and mailing address. When will those be set, and when should COLD_OUTREACH come back on? Should stale drafts be cleared first?
+- The pool has 1 candidate against 16,717 sourced postings. Is candidate sourcing (resumes, job-board posting, LinkedIn app) the priority over more employer pitches?
+- The deploy-gate backtest (98/101) and the BD pitch-drafts step are both failing. Do you want an engineering session to fix them, given that finished work can't auto-deploy until the gate is green?
 - Which fee applies to trades clients: the 12% in estimates or the 19.5% / 90-day terms line? And what target gross margin should contract placements hit?
 - The footer says "Acuere Talent, LLC", but Sunbiz has no Acuere entity. When will it be filed, and which name should the site use until then?
-- The 1099-first default: has a CPA or attorney reviewed it against the pending DOL five-factor test? And is FL contractor new-hire reporting ($600+) covered by your payroll/EOR plan?
